@@ -1,0 +1,83 @@
+---
+title: "Week 2 Problem Set"
+author: "Your Name Here!"
+date: "Date goes Here!"
+output: pdf_document
+---
+
+```{r header2}
+#####################################################
+## title: second problem set!
+## author: you!
+## purpose: to try out R
+## date: today's date
+#####################################################
+
+# you can start coding below
+
+```
+
+
+On GitHub, create a new __repository__ called "soc10problemsets" (or something similar). Then upload the "Week2PSetTemplate.Rmd" file (you can download it here [here](https://github.com/Soc10Spring2026/soc10problemsets_templates)). Make Tyler (`tylermcdaniel`) and Yao (`yao-mxu`) "collaborators" in this repository so we can see your work (Settings -> Collaborators -> Add People). Add your name and the date to the top of the file, save your changes, and __commit__ them. (note: You can do this online, but I recommend using GitHub Desktop!).
+
+
+[Text answer for question 1 here]
+
+
+
+2. In the space below, set "eval = TRUE" and try running the first code chunk. Then fix the error. On your local file, __commit__ the file to your GitHub.  
+
+[Text answer for question 2 here]
+
+```{r q2, echo = TRUE, eval = FALSE}
+
+# this is an initial dataframe
+df1 <- data.frame("resource name" = "a",
+                  "custom_ready" = "b")
+
+
+# we want to add observations to it (c, and d)
+# something is wrong with the following function - can you fix it?
+add_line <- function(dataframe, new_dataframe){
+  
+  new_dataframe -> data.frame("resource" = "c",
+                              "custom_ready" = "d")
+  
+  bind_rows(dataframe, new_dataframe)
+  
+}
+
+# this should return a dataframe with all our observations (a, b, c, and d, neatly organized)
+add_line(df1)
+
+```
+
+3. Add your own data to a collaboration! In the markdown file, add to the small dataframe with some potential data sources for further social science research. Add one or more resources to this list. __Commit__ your changes. 
+
+
+```{r q3, echo = TRUE}
+
+# write code for question 3 here!
+resources_df <- data.frame("resource name" = c("All Our Ideas"), 
+                       "link" = c("https://allourideas.org/"),
+                       "custom_ready" = c("custom made"),
+                       "description" = c("All Our Ideas is a wiki survey that asks participants to compare two items (e.g. which is better, Stanford or Cal?) at a time. The respondents' answers are then aggregated so that each answer has a win percentage, and the surveyor can rank a large number of items. Respondents can also add their own ideas (answers) to the survey. This is useful for doing surveys on large or ambiguous questions, where the researcher might not know the best answers and it may be hard to compare all at once, but where there is a definitive underlying ranking."))
+
+```
+
+4. Using the `gtrendsR` R package, download data on a term of your choosing. Show a plot of the search term over time, and then plot it over different geographies. Discuss how each of Salganik's 10 characteristics of computational data apply (or don't apply). __Commit__ your changes. 
+
+[Text answer for question 4 here]
+
+```{r q4, echo = TRUE}
+
+# write code for question 4 here!
+
+
+```
+
+
+5. List the three types of collaboration that Salganik names. When can each work well, and what are potential downsides? List one new idea for a collaborative data project in each category. __Commit__ your changes. 
+
+
+
