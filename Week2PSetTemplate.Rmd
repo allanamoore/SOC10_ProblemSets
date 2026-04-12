@@ -29,7 +29,7 @@ On GitHub, create a new __repository__ called "soc10problemsets" (or something s
 
 [Text answer for question 2 here]
 
-```{r q2, echo = TRUE, eval = FALSE}
+```{r q2, echo = TRUE, eval = TRUE}
 
 # this is an initial dataframe
 df1 <- data.frame("resource name" = "a",
@@ -38,12 +38,10 @@ df1 <- data.frame("resource name" = "a",
 
 # we want to add observations to it (c, and d)
 # something is wrong with the following function - can you fix it?
-add_line <- function(dataframe, new_dataframe){
+add_line <- function(dataframe, new_dataframe = data.frame("resource name" = "c",
+                                                           "custom_ready" = "d")){
   
-  new_dataframe -> data.frame("resource" = "c",
-                              "custom_ready" = "d")
-  
-  bind_rows(dataframe, new_dataframe)
+  dplyr::bind_rows(dataframe, new_dataframe)
   
 }
 
