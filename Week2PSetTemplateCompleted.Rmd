@@ -1,0 +1,133 @@
+---
+title: "Week 2 Problem Set"
+author: Allana Moore
+date: 4/11/26
+output: pdf_document
+---
+
+```{r header2}
+#####################################################
+## title: second problem set!
+## author: Allana Moore
+## purpose: to try out R
+## date: 4/8/2026
+#####################################################
+
+# you can start coding below
+
+```
+
+
+1. On GitHub, create a new __repository__ called "soc10problemsets" (or something similar). Then upload the "Week2PSetTemplate.Rmd" file (you can download it here [here](https://github.com/Soc10Spring2026/soc10problemsets_templates)). Make Tyler (`tylermcdaniel`) and Yao (`yao-mxu`) "collaborators" in this repository so we can see your work (Settings -> Collaborators -> Add People). Add your name and the date to the top of the file, save your changes, and __commit__ them. (note: You can do this online, but I recommend using GitHub Desktop!).
+
+
+[Text answer for question 1 here]
+
+
+
+2. In the space below, set "eval = TRUE" and try running the first code chunk. Then fix the error. On your local file, __commit__ the file to your GitHub.  
+
+[Text answer for question 2 here]
+
+```{r q2, echo = TRUE, eval = TRUE}
+
+# this is an initial dataframe
+df1 <- data.frame("resource name" = "a",
+                  "custom_ready" = "b")
+
+
+# we want to add observations to it (c, and d)
+# something is wrong with the following function - can you fix it?
+add_line <- function(dataframe, new_dataframe = 
+                       data.frame("resource name" = "c",
+                                  "custom_ready" = "d")){
+  dplyr::bind_rows(dataframe, new_dataframe)
+  
+}
+
+# this should return a dataframe with all our observations (a, b, c, and d, neatly organized)
+add_line(df1)
+
+```
+
+3. Add your own data to a collaboration! In the markdown file, add to the small dataframe with some potential data sources for further social science research. Add one or more resources to this list. __Commit__ your changes. 
+
+
+```{r q3, echo = TRUE}
+
+
+# write code for question 3 here!
+resources_df <- data.frame("resource name" = c("All Our Ideas"), 
+                       "link" = c("https://allourideas.org/"),
+                       "custom_ready" = c("custom made"),
+                       "description" = c("All Our Ideas is a wiki survey that asks participants to compare two items (e.g. which is better, Stanford or Cal?) at a time. The respondents' answers are then aggregated so that each answer has a win percentage, and the surveyor can rank a large number of items. Respondents can also add their own ideas (answers) to the survey. This is useful for doing surveys on large or ambiguous questions, where the researcher might not know the best answers and it may be hard to compare all at once, but where there is a definitive underlying ranking."))
+
+add_line <- function(resources_df, new_dataframe = 
+                       data.frame("resource name" = "Medicare's priciest drugs.",
+                                  "link" = c("https://www.cms.gov/data-research/statistics-trends-and-reports/cms-drug-spending"),
+                                  "custom_ready" = c("custom made"),
+                                  "description" = c("CMS has released several information products that provide greater transparency on spending for drugs in the Medicare and Medicaid programs."))) {
+  dplyr::bind_rows(resources_df, new_dataframe)
+  
+}
+
+add_line(resources_df)
+
+```
+
+4. Using the `gtrendsR` R package, download data on a term of your choosing. Show a plot of the search term over time, and then plot it over different geographies. Discuss how each of Salganik's 10 characteristics of computational data apply (or don't apply). __Commit__ your changes. 
+
+Big: There is a large array of drugs on the market 
+Always-on: Sort of - released periodically 
+Nonreactive: No behavior is changed because data is being collected
+Incomplete: Only covers Medicare, not the entire perscription drug market
+Inaccessible: Nope! Publically accessible at aggregate level
+Nonrepresentative: Only shows population on Medicare 
+Drifting: Yes - composition of Medicare enrollees, covered drugs, and reimbursement policies change over time, so trends in the data can reflect different factors.
+Algorithmically confounded: Not directly
+Dirty: Yes - billing data is notoriously messy (it can include coding errors, duplicate claims, and inconsistencies across providers and states.)
+Sensitive: Yes- drug spending data can reveal sensitive health and financial information. 
+
+```{r q4, echo = TRUE}
+
+
+install.packages("gtrendsR")
+library(gtrendsR)
+
+
+
+# Import and Plot data
+data_social <- gtrends(c("ozempic"), 
+                       geo = c("US"))
+plot(data_social)
+
+
+# Change time scale 
+data_social_all <- gtrends(c("ozempic"), 
+                           geo = c("US"), time = "all")
+plot(data_social_all)
+
+
+# Location strat 
+data_social <- gtrends(c("ozempic"), geo = c("US"), time = "2015-01-01 2025-01-01")
+
+plot(data_geo)
+
+
+
+```
+
+
+5. List the three types of collaboration that Salganik names. When can each work well, and what are potential downsides? List one new idea for a collaborative data project in each category. __Commit__ your changes. 
+
+
+Salganik names three types of mass collaboration: human computation, open calls, and distributed data collection.
+
+Human computation works when a task is too big for one researcher but simple for volunteers like Galaxy Zoo, where volunteers classified 40 million galaxies. The downside is it is hard to incentivize participation. 
+
+Open calls are good to recruit a lot of talent and participation when the solution is unknown to researchers but might exist somewhere in the public, like the Netflix Prize. The downside is submissions need to be verifiable and incentives can introduce concerns. 
+
+Distributed data collection works when data is impossible for researchers to gather alone but natural for volunteers, like eBird. The downside is inconsistent quality and participation.
+
+A new collaborative data project I would like to see is more granular medical responses. Because of the sensitivity of medical data, it is hard to
+get consistent and abundant data from people's day to day lives, but forums and places where people can casually share their medical experiences have proven to be very helpful for people researching and understanding their own health. This is especially true with rising medical costs and shortening doctor visits. 
