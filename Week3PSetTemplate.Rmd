@@ -1,0 +1,67 @@
+---
+title: "Week 3 Problem Set"
+author: "Your Name Here! (github link here)"
+date: "Date goes Here!"
+output: pdf_document
+---
+
+1. Start a new document, problemset3.Rmd, in your soc10problemsets repository. (You can download a template [here](https://github.com/Soc10Spring2026/soc10problemsets_templates), but be sure to save it in your own soc10problemsets repo). Change your name in the header. Load the `gapminder` data using `library(gapminder)`. Create a simple plot with two of the variables. __Commit__ your changes. 
+
+[Text answer for question 1 here]
+
+```{r q1, echo = TRUE}
+
+
+
+```
+
+2. Now, modify your plot! For each change that you make, explain your decision, in terms of the visual elements. __Commit__ your changes. 
+
+[Text answer for question 2 here]
+
+```{r q2, echo = TRUE}
+
+
+
+```
+
+3. Use the code provided to load data on racial compositions in California. Then create your own visualization! Try to make it different than what is done above. Is there anything that you want to change, but are unable to? Describe what you want to communicate with these data. __Commit__ your changes. 
+
+[Text answer for question 3 here]
+
+```{r q3, echo = TRUE, message = FALSE}
+
+library(readr)
+library(RCurl)
+
+# input url from github
+url <- getURL("https://raw.githubusercontent.com/tylermcdaniel/soc10/refs/heads/deployment/Data/ca_dem_table.csv")
+
+# download wikipedia data (from github)
+ca_dem_table <- read_csv(url)
+
+
+```
+
+4. Return to a dataset you have worked with in this class already (for example, hand-collected data, data using the `data()` function. The `gtrendsR` data could also work but may need some cleaning/manipulation). Use `ggplot()` to plot this data in a new way. Describe whether the viewer learns anything new from seeing the data in this way. __Commit__ your changes.  
+
+[Text answer for question 4 here]
+
+```{r q4, echo = TRUE}
+
+# write code for question 4 here!
+
+
+```
+
+
+5. Find a data visualization in the wild! It could be in the news, from an academic article, or somewhere else. Include an image of it using the `knitr::include_graphics("")` function. Describe its positive and negative aspects. __Commit__ your changes. 
+
+[Text answer for question 5 here]
+
+
+```{r q5, echo = TRUE}
+
+#knitr::include_graphics("")
+
+```
