@@ -1,0 +1,55 @@
+---
+title: "Week 5 Problem Set"
+author: "Your Name Here! (github link here)"
+date: "Date goes Here!"
+output: pdf_document
+---
+
+
+1. Start a new document, problemset5.Rmd, in your soc10problemsets repository. (You can download a template [here](https://github.com/Soc10Spring2026/soc10problemsets_templates), but be sure to save it in your own soc10problemsets repo). Read the North Carolina shapefile into R using the process described in section \@ref(using-simple-features-in-r). Then plot the data using `ggplot2`. Use a variable other than `AREA` to fill the shapes, and try using one of the `scale_fill_` arguments to create a red color scale. See [these notes on color scales with ggplot](https://ggplot2-book.org/scales-colour.html) for some theory and ideas here. __Commit__ your changes. 
+
+[Note: the scoring guidelines in brackets can be deleted before submitting. Load the nc data (0.5 points), use the correct function (0.5) and plot using ggplot2 with a variable other than AREA (1 point). Use scale_fill to create a red color scale (0.5 points).]
+
+```{r q1, echo = TRUE}
+
+
+```
+
+2. Use the `tidycensus` function to download income data for block groups in Santa Clara County. Plot the demographic data using `ggplot()` and comment on what it shows. __Commit__ your changes. 
+
+
+[Download data for a correct variable in the correct geographies (1 point). Plot the map with ggplot (0.5 points). Describe findings accurately (0.5 points).]
+
+
+3. Use the `tigris` function to download spatial data for counties in California. Plot the data using `ggplot()`. __Commit__ your changes. 
+
+[Use tigris to gather boundaries at the correct geometries (0.5 points). Plot the data correctly (0.5 points).]
+
+```{r q3, echo = TRUE, message = FALSE}
+
+
+
+```
+
+4. Download the clean AQI monitor datasets from Canvas ("aqi22_clean_ca.csv") or using the code below, and plot these inside the boundaries that you have downloaded from `tigris`. Then, calculate the average PM2.5 levels in each of the geographical units, and plot your geographies again according to these levels (as we did in section \@ref(spatially-joining-data)). Which areas had the best (and worst) air quality in 2022? What are the implications? __Commit__ your changes. 
+
+[Create a plot with boundaries and AQI locations (0.5 points). Spatially join data (1 point) and calculate average PM2.5 levels in each unit (0.5 points). Plot the data again (0.5 points). Describe the findings and potential social implications (1 point).]
+
+```{r q4, echo = TRUE, message = FALSE}
+
+library(readr)
+library(RCurl)
+
+# input url from github
+url <- getURL("https://raw.githubusercontent.com/tylermcdaniel/css/main/Data/aqi22_clean_ca.csv")
+
+# download aqi monitor data (from github)
+aqi22m <- read_csv(url)
+
+```
+
+
+5. Does the county-level air quality map accurately represent how people experience air quality? Is the Modifiable Areal Unit Problem something that we should be concerned with? __Commit__ your changes. 
+
+[Make a defensible argument about the data's representativeness (0.5 points). Make a defensible argument about the MAUP (1 point). ]
+
