@@ -1,0 +1,45 @@
+---
+title: "Week 4 Problem Set"
+author: "Your Name Here! (github link here)"
+date: "Date goes Here!"
+output: pdf_document
+---
+
+1. Start a new document, problemset4.Rmd, in your soc10problemsets repository. (You can download a template [here](https://github.com/Soc10Spring2026/soc10problemsets_templates), but be sure to save it in your own soc10problemsets repo). In the chunk below, show how you would gather data on California's ethnoracial demographics for 2020 using `tidycensus`. (Note: in the chunk below, `eval` is set to false, so you won't see any results. That is ok! Just show the code. And remove your personal key). __Commit__ your changes.
+
+[Note: the scoring guidelines in brackets can be deleted before submitting. Library the correct package (0.5 points), use the correct function (0.5) to gather the correct data on race for 2020 (0.5 points). Additional note: there is no single correct racial variable, there are many to choose from. Ideally, make a choice and justify it.]
+
+```{r q1, echo = TRUE, eval = FALSE}
+
+
+```
+
+2. In Bit by Bit, Salganik describes several possibilities and challenges of survey data in the digital age. Do you think any of these have changed since 2017 (when the book was written)? Pick a new type of survey or data collection, and describe its current possibilities and limitations. __Commit__ your changes. 
+
+[Identify at least one of the methods Salganik describes and how this may have changed (1 point). Pick a reasonable new type of survey or data collection, and describe both its possibilities (0.5 points) and limitations (0.5 points).]
+
+
+3. Gather the data from [this Wikipedia page on incarceration in the US](https://en.wikipedia.org/wiki/Incarceration_in_the_United_States) (you can use the code from Section 4 of the course website to gather this). Use `mutate()`, `parse_number()` from the `readr` package, and the magrittr pipe (`%<>%`) to fix the issue with the `Count` variable. Then plot the Count variable over time with `ggplot()`. __Commit__ your changes.
+
+[Use mutate and parse_number to create a new variable or modify the Count variable (1 point). Correctly use the magrittr pipe (0.5 points). The resulting plot should show the correct y axis for the incarceration data (0.5 points).]
+
+```{r q3, echo = TRUE, message = FALSE}
+
+
+
+```
+
+4. Now model it! Add a linear model of incarceration over time to your plot. (Note: If you are unable to plot question 3 correctly, you can plot `Rate` as the outcome for this question). __Commit__ your changes.  
+
+[Add the correct layer to the plot (0.5 points), with the correct method specified (0.5 points). The plot should be correctly formatted (0.5 points).]
+
+```{r q4, echo = TRUE}
+
+
+```
+
+
+5. Would a linear or non-linear model be more appropriate for explaining and predicting trends in US society and incarceration? Explain the benefits and drawbacks of each. __Commit__ your changes.  
+
+[Make a defensible argument about the data trend (1 point). Identify benefits (1 point) and drawbacks (1 point) of both linear and nonlinear models.]
+
