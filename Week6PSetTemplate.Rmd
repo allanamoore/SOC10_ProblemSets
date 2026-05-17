@@ -1,0 +1,98 @@
+---
+title: "Week 6 Problem Set"
+author: "Your Name Here! (github link here)"
+date: "Date goes Here!"
+output: pdf_document
+---
+
+
+1. Start a new document, problemset6.Rmd, in your soc10problemsets repository. (You can download a template [here](https://github.com/Soc10Spring2026/soc10problemsets_templates), but be sure to save it in your own soc10problemsets repo). Create a network based on 5 people in our class! (You can use the "class_activities.csv" file from Canvas if helpful or use the code in the template). Using `igraph`, create a network diagram based on who has worked with who in our class activities this quarter (you may want to use `graph_from_data_frame()` if you read in the csv). Then plot the network. (Note: a network with only 5 people, excluding ties to everyone outside of these 5, is sufficient). __Commit__ your changes. 
+
+[Note: the scoring guidelines in brackets can be deleted before submitting. Create a network with igraph (1 point), and plot it (0.5 points).]
+
+```{r q1, echo = TRUE}
+library(readr)
+library(RCurl)
+library(magrittr)
+library(dplyr)
+
+# input url from github
+url <- getURL("https://raw.githubusercontent.com/tylermcdaniel/css/main/Data/class_activities.csv")
+
+# download class activities data (from github)
+class_activities <- read_csv(url)
+
+
+```
+
+2. Choose a centrality measure, and explain how you would interpret this in the context of the class activities data. Who is/are the most central actor(s) according to this measure? __Commit__ your changes. 
+
+```{r q2, echo = TRUE}
+
+
+
+```
+
+[Correctly use a centrality measure (0.5 points) and interpret its meaning (0.5 points). Identify the most central actor(s) (0.5 points).]
+
+
+3. Now download the IPCC co-authorship data (you can use the code included in the template). Using the IPCC co-authorship data, create a network graph of all co-authors who share at least 2 publications together, excluding those with no network ties, similar to what we do in section \@ref(co-authorship-patterns). Graph the data using eigenvector scores, rather than betweenness scores, to plot the vertex sizes. Does this make a difference in our interpretation of the network? __Commit__ your changes. 
+
+
+[Create a network graph of all co-authors with correct number of ties (1 point). Use eigenvector scores rather than betweenness scores to scale vertices (0.5 points). Describe the findings and potential implications (1 point).]
+
+```{r q3, echo = TRUE, message = FALSE}
+
+
+
+```
+
+4. Let's say you want to give one of the IPCC authors a memo to disseminate to the others. Who would you choose? Which measure of centrality would help you arrive at your answer? __Commit__ your changes. 
+
+
+[Identify a reasonable strategy for dissemenation (1 point). Discuss a reasonable centrality measure that aligns with strategy (0.5 points). Correctly identify the node with highest value for said centrality measure (0.5 points).]
+
+```{r q4, echo = TRUE, message = FALSE}
+
+# input url from github
+url <- getURL("https://raw.githubusercontent.com/tylermcdaniel/css/main/Data/IPCC_co_authorship.csv")
+
+# download authorship data (from github)
+ipcc_authors <- read_csv(url, skip = 1)
+
+# replace NA's with 0's
+ipcc_authors %<>%
+  mutate_all(~replace(., is.na(.), 0))
+
+```
+
+
+5. Finally, plot the IPCC co-authorship data, but change the color/shape of the vertices so that these correspond to authors' gender. Describe what you see. What conclusions can you make about authorship and gender? (Note that you will need the IPCC_cv.csv dataset. The code in the template has combined these datasets). __Commit__ your changes. 
+
+[Correctly define a gender variable, and include an accurate label (1 point). Plot the IPCC co-authorship data with modified color/shape based on gender (0.5 points). Accurately describe the plot (0.5 points). Assess conclusions that can (or can't) be drawn (0.5 points).]
+
+
+```{r q5, echo = TRUE, message = FALSE}
+
+library(readr)
+library(RCurl)
+
+# input url from github
+url <- getURL("https://raw.githubusercontent.com/tylermcdaniel/css/main/Data/IPCC_co_authorship.csv")
+
+# download authorship data (from github)
+ipcc_authors <- read_csv(url, skip = 1)
+
+# replace NA's with 0's
+ipcc_authors %<>%
+  mutate_all(~replace(., is.na(.), 0))
+
+## now gather cv data
+# input url from github
+url <- getURL("https://raw.githubusercontent.com/tylermcdaniel/css/main/Data/IPCC_cv.csv")
+
+# download authorship data (from github)
+ipcc_cvs <- read_csv(url)
+
+
+```
