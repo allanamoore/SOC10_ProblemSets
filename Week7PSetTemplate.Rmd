@@ -1,0 +1,62 @@
+---
+title: "Week 7 Problem Set"
+author: "Your Name Here! (github link here)"
+date: "Date goes Here!"
+output: pdf_document
+---
+
+
+[Note: the scoring guidelines in brackets can be deleted before submitting. Overall presentation/cleanliness of document (e.g. writing and code presented clearly, no unnecessary messages/warnings) 1 point.]
+
+1. Start a new document, problemset7.Rmd, in your soc10problemsets repository. (You can download a template [here](https://github.com/Soc10Spring2026/soc10problemsets_templates), but be sure to save it in your own soc10problemsets repo). Create a map of the `ames` data, but change the cluster specifications to try to get closer to the "true" neighborhoods shown [here](https://019c932f-6501-a8d5-bac5-df7f6ede5a76.share.connect.posit.cloud/predictions-and-machine-learning.html#fig:amesfigure).  Describe the benefits and limitations of your approach. __Commit__ your changes. 
+
+[Modify k-means to produce clusters closer to the ames neighborhood definitions (1 points), successfully map the ames data and clusters (0.5 points). Demonstrate understanding of benefits/limitations to k-means clustering (0.5 points).]
+
+```{r q1, echo = TRUE}
+
+
+```
+
+2. Using the `tigris` package, download roads data for the county of Story, IA. Add roads to your plot. __Commit__ your changes. 
+
+
+
+```{r q2, echo = TRUE}
+
+
+
+```
+
+[Successfully download and add roads to the plot (1 point).]
+
+
+3.  Try to train an algorithm to predict housing sales prices. Create a random forest to predict the sales price, using some new or different variables than the model above. Create a model that _better_ predicts sales price, and explain why it is better. __Commit__ your changes. 
+
+[Create a random forest algorithm that predicts housing sales prices (0.5 points). Modify the model inputs (0.5 points) and describe the changes made (0.5 points). Use metrics to demonstrate why the model is better than the one presented in the course site (0.5 points).]
+
+```{r q3, echo = TRUE, message = FALSE}
+
+
+
+```
+
+4. Perhaps the model could be better trained using Cross Validation. Set up a 10-fold cross validation model, and predict sales prices again. Compare these results to your prior results. Are they similar or different, and what does this mean?   __Commit__ your changes. 
+
+
+[Train a similar model using cross validation (1 point). Correctly compare prediction metrics from cross validated and earlier models (1 point). ]
+
+```{r q4, echo = TRUE, message = FALSE}
+
+
+```
+
+
+5. If a real estate company used algorithms to determine home values, could this have any societal implications? Walk the reader through why the data could induce biases and how you might try to resolve these potential problems.  __Commit__ your changes. 
+
+[Identify potential biases to algorithmic determinations of home values, and implications of these biases (1 point). Identify at least one potential way to reduce bias, and explain why it may or may not work (1 point).]
+
+
+```{r q5, echo = TRUE, message = FALSE}
+
+
+```
