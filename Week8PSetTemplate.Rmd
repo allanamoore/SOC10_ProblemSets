@@ -1,0 +1,59 @@
+---
+title: "Week 8 Problem Set"
+author: "Your Name Here! (github link here)"
+date: "Date goes Here!"
+output: pdf_document
+---
+
+
+[Note: the scoring guidelines in brackets can be deleted before submitting. Overall presentation/cleanliness of document (e.g. writing and code presented clearly, no unnecessary messages/warnings) 1 point.]
+
+1. Start a new document, problemset8.Rmd, in your soc10problemsets repository. (You can download a template [here](https://github.com/Soc10Spring2026/soc10problemsets_templates), but be sure to save it in your own soc10problemsets repo). Use the Guardian API to download news stories related to the the World Cup. Put the data in `tidytext` format (each row should have a single word). __Commit your changes__. 
+
+[Successfully download stories using the Reddit API (1 point). Gather relevant data (0.5 points) and put it in tidytext format (0.5 points).]
+
+```{r q1, echo = TRUE}
+
+
+```
+
+2. Use `RedditExtractoR` to download Reddit comments (or threads) for a topic of interest. Explain how you picked the topic and what we might learn from it. Be sure that you download data from multiple subreddits, and describe each briefly. __Commit your changes__.  
+
+
+
+```{r q2, echo = TRUE}
+
+
+
+```
+
+[Successfully download Reddit comments (1 point) from multiple subreddits (0.5 points). Describe your data accurately (0.5 points).]
+
+
+3. Choose two subreddits, and compare the frequencies of words between them. (Similar to what is done in Figure 8.3). __Commit your changes__. 
+
+
+```{r q3, echo = TRUE, message = FALSE}
+
+
+
+```
+
+[Create a plot to show term frequencies across two subreddits (1 point). The plot should be accurately labeled and presented (0.5 points).]
+
+
+4. Create a plot comparing sentiment across two or more subreddits. (Similar to what is done in Figure 8.5). __Commit your changes__. 
+
+
+```{r q4, echo = TRUE, message = FALSE}
+
+
+```
+
+[Use a sentiment dictionary to attach sentiments to your data (1 point). Comment on the sentiment chosen (0.5 points). Accurately present and label the plot (0.5 points).]
+
+
+5. Which of the "families" of text analysis do your analyses from the prior questions work fall under? Describe how you might incorporate methods from the other families in your analysis. __Commit your changes__. 
+
+[Accurately describe the families of text analysis (0.5 points), which apply to PSet analyses (0.5 points), and how others might be useful for future research (0.5 points).]
+
